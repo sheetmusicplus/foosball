@@ -1,0 +1,33 @@
+source 'https://rubygems.org'
+
+ruby '2.2.2'
+
+gem 'rails', github: 'rails/rails'
+# 'sprockets-rails', github: 'rails/sprockets-rails'
+gem 'arel', github: 'rails/arel'
+
+# Use postgresql as the database for Active Record
+gem 'pg'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Use ActiveModelSerializers to serialize JSON responses
+gem 'active_model_serializers', '~> 0.10.0.rc2'
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# gem 'rack-cors'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'dotenv-rails'
+end
+
+group :development do
+end

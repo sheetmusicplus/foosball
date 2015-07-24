@@ -1,0 +1,9 @@
+--skip-bundle
+--skip-sprockets
+--skip-spring
+--skip-test-unit
+--database=postgresql
+--skip-javascript
+--edge
+--skip-turbolinks
+--api
