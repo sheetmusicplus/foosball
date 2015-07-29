@@ -7,6 +7,7 @@ var application;
 module('Acceptance | login', {
   beforeEach: function() {
     application = startApp();
+    invalidateSession();
   },
 
   afterEach: function() {
@@ -33,5 +34,21 @@ test('visit / and enter an invalid passcode', function(assert) {
 
   andThen(() => {
     assert.equal(currentURL(), '/');
+  });
+});
+
+test('protected /matches route is not accessible when not authneticated', function(assert) {
+  visit('/matches');
+
+  andThen(() => {
+    assert.notEqual(currentURL(), '/matches');
+  });
+});
+
+test('protected /players route is not accessible when not authneticated', function(assert) {
+  visit('/players');
+
+  andThen(() => {
+    assert.notEqual(currentURL(), '/players');
   });
 });

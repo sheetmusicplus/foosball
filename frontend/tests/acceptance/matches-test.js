@@ -7,6 +7,7 @@ var application;
 module('Acceptance | matches', {
   beforeEach: function() {
     application = startApp();
+    authenticateSession();
   },
 
   afterEach: function() {
@@ -14,10 +15,10 @@ module('Acceptance | matches', {
   }
 });
 
-test('visit /matches without entering a passcode', function(assert) {
+test('visiting /matches', function(assert) {
   visit('/matches');
 
   andThen(() => {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/matches');
   });
 });

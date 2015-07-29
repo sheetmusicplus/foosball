@@ -1,3 +1,12 @@
-<h2>Foosball</h2>
+<h1>Foosball</h1>
+
+{{#if session.isAuthenticated}}
+  <ul>
+    <li>{{link-to 'Matches' 'matches'}}</li>
+    <li>{{link-to 'Players' 'players'}}</li>
+  </ul>
+{{else}}
+  {{login-form}}
+{{/if}}
 
 {{outlet}}

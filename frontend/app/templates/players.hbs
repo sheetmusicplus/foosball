@@ -1,0 +1,14 @@
+<h2>Players</h2>
+
+<form>
+  {{input type="text" placeholder="New Player" value=name}}
+  <button class="new-player-button" {{action 'createPlayer'}}>
+    Add
+  </button>
+</form>
+
+<ul class="players">
+  {{#each model as |player|}}
+    <li class="player">{{player.name}}</li>
+  {{/each}}
+</ul>
