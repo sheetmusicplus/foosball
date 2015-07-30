@@ -1,3 +1,39 @@
 <h2>Matches</h2>
 
-{{outlet}}
+<form>
+  {{#x-select class='match-winner' value=matchWinner action='selectWinner'}}
+    <option>-- Match Winner --</option>
+    {{#each players as |player|}}
+      {{#x-option value=player}}{{player.name}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+  &nbsp;
+  {{#x-select class='match-loser' value=matchLoser action='selectLoser'}}
+    <option>-- Match Loser --</option>
+    {{#each players as |player|}}
+      {{#x-option value=player}}{{player.name}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+  <button class="new-match-button" {{action 'createMatch'}}>
+    Add
+  </button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <td>Winner</td>
+      <td>Loser</td>
+      <td>Occured At</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each matches as |match|}}
+      <tr>
+        <td class="winner">{{match.winner.name}}</td>
+        <td class="loser">{{match.loser.name}}</td>
+        <td class="occured-at">{{match.occuredAt}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

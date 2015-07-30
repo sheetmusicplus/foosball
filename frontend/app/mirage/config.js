@@ -72,6 +72,13 @@ export default function() {
 
   */
 
+  this.get('/matches');
+  this.post('/matches', (db, request) => {
+    let params = JSON.parse(request.requestBody);
+    params.match.occuredAt = new Date().getTime();
+    return db.matches.insert(params);
+  });
+
   this.get('/players');
   this.post('/players');
 }
