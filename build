@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+./test
+pushd frontend; ember build -prod -o ../api/public/; popd

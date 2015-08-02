@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+pushd frontend; npm install && bower install; ember test; popd
+pushd persistence; bundle install; rspec spec/; popd
+pushd api; bundle install; rspec spec/; popd
