@@ -63,7 +63,7 @@ GIT
       thor (>= 0.18.1, < 2.0)
 
 PATH
-  remote: ../persistence
+  remote: vendor/gems/persistence-0.1.0
   specs:
     persistence (0.1.0)
       rails

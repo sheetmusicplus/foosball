@@ -4,3 +4,4 @@ set -e
 
 ./test
 pushd frontend; ember build -prod -o ../api/public/; popd
+pushd persistence; rake install:local; gem unpack pkg/persistence-0.1.0.gem --target=../api/vendor/gems; popd

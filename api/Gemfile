@@ -25,7 +25,7 @@ gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'puma'
 
-gem 'persistence', path: '../persistence'
+gem 'persistence', path: File.join(File.dirname(__FILE__), '/vendor/gems/persistence-0.1.0')
 
 group :production do
   gem 'rails_12factor'

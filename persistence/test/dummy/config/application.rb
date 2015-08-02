@@ -12,7 +12,7 @@ require 'active_record/railtie'
 # require 'rails/test_unit/railtie'
 
 Bundler.require(*Rails.groups)
-require 'foos_dbms'
+require 'persistence'
 
 module Dummy
   class Application < Rails::Application
