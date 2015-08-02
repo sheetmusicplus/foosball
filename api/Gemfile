@@ -25,6 +25,8 @@ gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'puma'
 
+gem 'persistence', path: '../persistence'
+
 group :production do
   gem 'rails_12factor'
 end

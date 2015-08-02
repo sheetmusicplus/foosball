@@ -32,9 +32,12 @@ RSpec.describe 'Api::Matches', type: :request do
     it 'must create a new match' do
       expect {
         post '/api/matches', params: { match: { winner_id: winner.id, loser_id: loser.id } }
-      }.to change(Match, :count).by(1)
+      }.to change(Persistence::Repos::MatchRepo, :count).by(1)
 
       expect(response.code).to eq('201')
+
+      serializer = MatchSerializer.new(Persistence::Repos::MatchRepo.first)
+      expect(response.body).to eq({ match: serializer.attributes }.to_json)
     end
   end
 end

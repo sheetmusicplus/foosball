@@ -5,7 +5,7 @@ class CreateMatches < ActiveRecord::Migration
       t.references :loser, index: true, null: false
       t.timestamp :occured_at, index: true, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
