@@ -18,7 +18,7 @@ $ git push heroku `git subtree split --prefix api master`:master --force
 ```
 
 ## Database Migrations
+
 ```
-$ heroku run rake persistence:install:migrations
 $ heroku run rake db:migrate
 ```

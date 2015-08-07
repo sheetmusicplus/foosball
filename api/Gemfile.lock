@@ -63,6 +63,12 @@ GIT
       thor (>= 0.18.1, < 2.0)
 
 PATH
+  remote: vendor/gems/foosball-0.1.0
+  specs:
+    foosball (0.1.0)
+      lotus-validations
+
+PATH
   remote: vendor/gems/persistence-0.1.0
   specs:
     persistence (0.1.0)
@@ -97,6 +103,9 @@ GEM
     json (1.8.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
+    lotus-utils (0.5.1)
+    lotus-validations (0.3.2)
+      lotus-utils (~> 0.4)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -162,6 +171,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  foosball!
   persistence!
   pg
   puma
