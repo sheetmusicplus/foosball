@@ -25,6 +25,7 @@ gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 gem 'puma'
 
+gem 'foosball', path: File.join(File.dirname(__FILE__), '/vendor/gems/foosball-0.1.0')
 gem 'persistence', path: File.join(File.dirname(__FILE__), '/vendor/gems/persistence-0.1.0')
 
 group :production do
