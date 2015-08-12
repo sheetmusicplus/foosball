@@ -1,26 +1,37 @@
+require 'foosball/concepts/operation'
 require 'foosball/entities/player'
 
 module Foosball
   module Concepts
     module Player
-      class List
-        def initialize(player_repo:)
+      class List < Concepts::Operation
+        def initialize(player_repo:, observer: nil)
           @player_repo  = player_repo
+          @observer     = observer || self
         end
 
         def execute
-          @player_repo.all
+          run(observer: @observer) do
+            [true, @player_repo.all]
+          end
         end
       end
 
-      class Create
-        def initialize(attributes:, player_repo:)
+      class Create < Concepts::Operation
+        def initialize(attributes:, player_repo:, observer: nil)
           @attributes   = attributes
           @player_repo  = player_repo
+          @observer     = observer || self
         end
 
         def execute
-          @player_repo.save(player) if valid?
+          run(observer: @observer) do
+            if valid?
+              [true, @player_repo.save(player)]
+            else
+              [false, player]
+            end
+          end
         end
 
         def player
@@ -32,14 +43,17 @@ module Foosball
         end
       end
 
-      class Read
-        def initialize(player_id:, player_repo:)
+      class Read < Concepts::Operation
+        def initialize(player_id:, player_repo:, observer: nil)
           @player_id    = player_id
           @player_repo  = player_repo
+          @observer     = observer || self
         end
 
         def execute
-          @player_repo.find(@player_id)
+          run(observer: @observer) do
+            [true, @player_repo.find(@player_id)]
+          end
         end
       end
     end

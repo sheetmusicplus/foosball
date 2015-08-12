@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.test_files       = Dir['{spec,test}/**/*']
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'hooks'
   spec.add_dependency 'lotus-validations'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
