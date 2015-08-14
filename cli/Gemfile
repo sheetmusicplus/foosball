@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'foosball', path: '../foosball'
+gem 'persistence', path: '../persistence'
+
+# Specify your gem's dependencies in foosball_cli.gemspec
+gemspec
