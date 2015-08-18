@@ -1,4 +1,4 @@
-require 'persistence/engine'
+require 'persistence/engine' if defined?(::Rails)
 require 'persistence/version'
 
 require 'persistence/repos/match_repo'

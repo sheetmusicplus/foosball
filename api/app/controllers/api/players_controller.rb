@@ -61,7 +61,7 @@ class Api::PlayersController < ApplicationController
   end
 
   def player_repo
-    Persistence::Repos::PlayerRepo
+    Persistence::Repos::PlayerRepo.new
   end
 
   def player_serializer

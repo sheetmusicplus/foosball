@@ -29,11 +29,11 @@ RSpec.describe 'Api::Players', type: :request do
     it 'must create a new player' do
       expect {
         post '/api/players', params: { player: { name: Faker::Name.name } }
-      }.to change(Persistence::Repos::PlayerRepo, :count).by(1)
+      }.to change(Persistence::Private::Player, :count).by(1)
 
       expect(response.code).to eq('201')
 
-      serializer = PlayerSerializer.new(Persistence::Repos::PlayerRepo.first)
+      serializer = PlayerSerializer.new(Persistence::Private::Player.first)
       expect(response.body).to eq({ player: serializer.attributes }.to_json)
     end
   end
